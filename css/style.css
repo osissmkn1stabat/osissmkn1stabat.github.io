@@ -18,6 +18,14 @@ img { max-width:100%; display:block; border-radius:8px; }
 }
 
 /* ========== Hero ========== */
+/* Logo OSIS di Hero */
+.osis-logo {
+  display: block;
+  margin: 0 auto 1rem;
+  width: 120px;
+  height: auto;
+}
+
 .hero {
   text-align:center;
   margin-bottom:3rem;
@@ -26,6 +34,34 @@ img { max-width:100%; display:block; border-radius:8px; }
   font-size:2.5rem;
   margin-bottom:.5rem;
 }
+
+/* Separator antara header dan content */
+.hero {
+  /* existing styles… */
+  padding-bottom: 2rem;          /* beri ruang bawah */
+  margin-bottom: 2rem;           /* beri jarak sebelum main */
+  border-bottom: 2px solid #9d00ff; /* garis pemisah */
+}
+
+
+/* ==== Hero Sosmed Icons ==== */
+.hero-sosmed {
+  display: flex;
+  justify-content: center;   /* center horizontal */
+  gap: 1rem;                 /* jarak antar icon */
+  margin-top: 1.5rem;        /* spasi di atas */
+}
+
+.hero-sosmed img {
+  width: 40px;               /* sesuaikan ukuran */
+  height: auto;
+  transition: transform .2s;
+}
+
+.hero-sosmed img:hover {
+  transform: scale(1.1);     /* efek hover */
+}
+
 
 /* Hero Title Glow */
 .Bidang-hero {
@@ -184,7 +220,8 @@ img { max-width:100%; display:block; border-radius:8px; }
 
 .section .text p {
   font-size:1.2rem;
-  color:#ccc;
+  color:#ffffff;
+  font-style: italic;
 }
 .section .image { flex:1; }
 
@@ -313,6 +350,37 @@ img { max-width:100%; display:block; border-radius:8px; }
     text-shadow: 0 0 20px #ff48ea;
   }
 }
+
+@keyframes glow-red {
+  0% {
+    box-shadow: 0 0 5px rgb(255, 51, 0)
+  }
+  50% {
+    box-shadow: 0 0 20px red
+  }
+  100% {
+    box-shadow: 0 0 5px rgb(255, 51, 0)
+  }
+}
+
+/* Semua elemen ini ter-hide dulu */
+.hero,
+.section,
+.site-footer {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Kelas yang memicu animasi */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.hidden { opacity: 0; transform: translateY(10px); }
+.fade-in { opacity: 1; transform: translateY(0); transition: opacity 0.6s, transform 0.6s; }
+
 
 /* ========== Footer ========== */
 .site-footer {
