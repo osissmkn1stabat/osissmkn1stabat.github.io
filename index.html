@@ -5,34 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OSIS SMKN-1 Stabat</title>
   <link rel="stylesheet" href="css/style.css">
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Pilih semua elemen yang ingin dianimasi
-    const targets = document.querySelectorAll('.hero, .section, .site-footer');
-
-    // Opsi Observer (bisa disesuaikan)
-    const options = {
-      root: null,           // viewport
-      rootMargin: '0px',
-      threshold: 0.5        // 10% elemen masuk viewport
-    };
-
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-          obs.unobserve(entry.target);  // hanya sekali
-        }
-      });
-    }, options);
-
-    // Mulai observe tiap target: tambahkan kelas 'hidden' default
-    targets.forEach(el => {
-      el.classList.add('hidden');      // initial state
-      observer.observe(el);
-    });
-  });
-</script>
 </head>
 <body>
   <div class="container">
@@ -183,3 +155,4 @@
   </div>
 </body>
 </html>
+
