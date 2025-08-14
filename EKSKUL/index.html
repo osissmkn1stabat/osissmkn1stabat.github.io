@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OSIS SMKN-1 Stabat</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Pilih semua elemen yang ingin dianimasi
+    const targets = document.querySelectorAll('.hero, .section, .site-footer');
+
+    // Opsi Observer (bisa disesuaikan)
+    const options = {
+      root: null,           // viewport
+      rootMargin: '0px',
+      threshold: 0.5        // 10% elemen masuk viewport
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          obs.unobserve(entry.target);  // hanya sekali
+        }
+      });
+    }, options);
+
+    // Mulai observe tiap target: tambahkan kelas 'hidden' default
+    targets.forEach(el => {
+      el.classList.add('hidden');      // initial state
+      observer.observe(el);
+    });
+  });
+</script>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Hero -->
+      <header class="hero">
+        <img
+            src="img/logo-smkn1stabat.webp"
+            alt="Logo OSIS"
+            class="osis-logo"
+          />
+          <h1>
+            <span class="Ekskul-hero">Ekskul</span>
+            <!-- <span class="Osis-hero">Osis</span> -->
+            <span class="SMKN-1-hero">SMKN 1 <span class="Stabat-hero">Stabat</span></span>
+          </h1>
+
+          <!-- Sosmed Icons -->
+        <div class="sosmed-icons hero-sosmed">
+          <a href="https://www.youtube.com/@humassmkn1stabat" target="_blank">
+            <img src="img/yt.svg" alt="YouTube"/>
+          </a>
+          <!-- <a href="https://discord.com/…">
+            <img src="img/dc.svg" alt="Discord"/>
+          </a> -->
+          <a href="https://www.instagram.com/humassmkn1stabat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+            <img src="img/ig.svg" alt="Instagram"/>
+          </a>
+          <a href="https://www.tiktok.com/@humassmkn1stabat?is_from_webapp=1&sender_device=pc" target="_blank">
+            <img src="img/tt.svg" alt="TikTok"/>
+          </a>
+          <!-- <a href="https://wa.me/…">
+            <img src="img/wa.svg" alt="WhatsApp"/>
+          </a> -->
+        </div>
+      </header>
+
+
+    <!-- Main content: 9 sections -->
+    <main>
+      <!-- ulangi block ini untuk tiap bidang (1–9) -->
+      <section class="section">
+        <div class="milestone">1</div>
+        <div class="text">
+          <h2><span class="Inti">1. Paskibra</span></h2>
+          <p>Persiapan baris-berbaris dan protokoler untuk upacara bendera serta disiplin nasionalisme.</p>
+        </div>
+        <div class="image">
+          <img src="img/logo-paskansat.webp" alt="Bidang Kepemimpinan">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">2</div>
+        <div class="text">
+          <h2><span class="Pramuka">2. Pramuka</span></h2>
+          <p>Melatih kemandirian, kepemimpinan, dan kerjasama melalui aktivitas lapangan dan kepramukaan.</p>
+        </div>
+        <div class="image">
+          <img src="img/logo-pramuka.webp" alt="Bidang Kreativitas & Seni">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">3</div>
+        <div class="text">
+          <h2><span class="Palang-Merah-Remaja">3. Palang Merah Remaja</span></h2>
+          <p>Pelatihan pertolongan pertama, donor darah mini, dan program kesehatan remaja.</p>
+        </div>
+        <div class="image">
+          <img src="img/logo-pmr.webp" alt="Bidang Olahraga & Kesehatan">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">4</div>
+        <div class="text">
+          <h2><span class="Rohis">4. Rohis</span></h2>
+          <p>Kajian islami, pengajian rutin, dan kegiatan sosial berbasis keagamaan.</p>
+        </div>
+        <div class="image">
+          <img src="img/logo-rohis.webp" alt="Bidang Olahraga & Kesehatan">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">5</div>
+        <div class="text">
+          <h2><span class="Kebaktian-Siswa-Kristen">5. Kebaktian Siswa Kristen</h2>
+          <p>Kegiatan Tambahan Untuk Siswa/Siswi Beragama Kristen.</p>
+        </div>
+        <div class="image">
+          <img src="img/KSK.png" alt="Bidang Olahraga & Kesehatan">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">6</div>
+        <div class="text">
+          <h2><span class="Seni-Tari">6. Seni Tari</h2>
+          <p>Pelatihan berbagai ragam tari tradisional dan modern untuk pertunjukan sekolah.</p>
+        </div>
+        <div class="image">
+          <img src="img/logo-seni tari.webp" alt="Bidang Olahraga & Kesehatan">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">7</div>
+        <div class="text">
+          <h2><span class="Panduan-Suara">7. Panduan Suara</h2>
+          <p>Pagelaran dan paduan suara, mengasah kemampuan vokal dan musikal siswa.</p>
+        </div>
+        <div class="image">
+          <img src="img/PADUS.png" alt="Bidang Olahraga & Kesehatan">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">8</div>
+        <div class="text">
+          <h2><span class="Pencak-Silat">8. Pencak Silat</h2>
+          <p>Latihan bela diri tradisional untuk pengembangan fisik, mental, dan disiplin.</p>
+        </div>
+        <div class="image">
+          <img src="img/SILAT.png" alt="Bidang Olahraga & Kesehatan">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">9</div>
+        <div class="text">
+          <h2><span class="Futsal">9. Futsal</h2>
+          <p>Tim olahraga futsal dengan latihan rutin dan turnamen antar sekolah.</p>
+        </div>
+        <div class="image">
+          <img src="img/logo-futsal.webp" alt="Bidang Olahraga & Kesehatan">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">10</div>
+        <div class="text">
+          <h2><span class="Volley-Ball">10. Volley Ball</h2>
+          <p>Latihan tim voli putra dan putri, strategi, dan teknik permainan bola voli.</p>
+        </div>
+        <div class="image">
+          <img src="img/logo-voli.webp" alt="Bidang Olahraga & Kesehatan">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">11</div>
+        <div class="text">
+          <h2><span class="PIK-R">11. PIK-R</h2>
+          <p>Pusat Informasi dan Konseling Remaja, wadah diskusi seputar remaja dan kesehatan.</p>
+        </div>
+        <div class="image">
+          <img src="img/logo-pik-r.webp" alt="Bidang Olahraga & Kesehatan">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">12</div>
+        <div class="text">
+          <h2><span class="Badminton">12. Badminton</h2>
+          <p>Latihan bulu tangkis untuk mengembangkan skill teknik dan kecepatan lapangan.</p>
+        </div>
+        <div class="image">
+          <img src="img/logo-badminton.webp" alt="Bidang Olahraga & Kesehatan">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="milestone">13</div>
+        <div class="text">
+          <h2><span class="Catur">13. Catur</h2>
+          <p>Klub catur dengan turnamen internal dan pelatihan strategi berpikir kritis.</p>
+        </div>
+        <div class="image">
+          <img src="img/logo-catur.webp" alt="Bidang Olahraga & Kesehatan">
+        </div>
+      </section>
+
+      
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 OSIS SMKN-1 Stabat. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
