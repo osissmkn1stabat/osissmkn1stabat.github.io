@@ -1,175 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OSIS SMKN-1 Stabat</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Pilih semua elemen yang ingin dianimasi
-    const targets = document.querySelectorAll('.hero, .section, .site-footer');
-
-    // Opsi Observer (bisa disesuaikan)
-    const options = {
-      root: null,           // viewport
-      rootMargin: '0px',
-      threshold: 0.5        // 10% elemen masuk viewport
-    };
-
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-          obs.unobserve(entry.target);  // hanya sekali
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+      const targets = document.querySelectorAll('.hero, .section, .site-footer');
+      const options = { root: null, rootMargin: '0px', threshold: 0.5 };
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, options);
+      targets.forEach(el => {
+        el.classList.add('hidden');
+        observer.observe(el);
       });
-    }, options);
-
-    // Mulai observe tiap target: tambahkan kelas 'hidden' default
-    targets.forEach(el => {
-      el.classList.add('hidden');      // initial state
-      observer.observe(el);
     });
-  });
-</script>
+  </script>
 </head>
 <body>
   <div class="container">
-
     <!-- Hero -->
-      <header class="hero">
-        <img
-            src="img/osis-logo.webp"
-            alt="Logo OSIS"
-            class="osis-logo"
-          />
-          <h1>
-            <span class="Bidang-hero">Bidang</span>
-            <span class="Osis-hero">Osis</span>
-            <span class="SMKN-1-hero">SMKN 1 <span class="Stabat-hero">Stabat</span></span>
-          </h1>
+    <header class="hero">
+      <img src="img/osis-logo.webp" alt="Logo OSIS" class="osis-logo" />
+      <h1>
+        <span class="Bidang-hero">Bidang</span>
+        <span class="Osis-hero">Osis</span>
+        <span class="SMKN-1-hero">SMKN 1 <span class="Stabat-hero">Stabat</span></span>
+      </h1>
 
-          <!-- Sosmed Icons -->
-        <div class="sosmed-icons hero-sosmed">
-          <!-- <a href="https://youtube.com/…">
-            <img src="img/yt.svg" alt="YouTube"/>
-          </a>
-          <a href="https://discord.com/…">
-            <img src="img/dc.svg" alt="Discord"/>
-          </a> -->
-          <a href="https://www.instagram.com/osissmkn1stabat_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-            <img src="img/ig.svg" alt="Instagram"/>
-          </a>
-          <a href="https://www.tiktok.com/@osissmkn1stabat?is_from_webapp=1&sender_device=pc" target="_blank">
-            <img src="img/tt.svg" alt="TikTok"/>
-          </a>
-          <!-- <a href="https://wa.me/…">
-            <img src="img/wa.svg" alt="WhatsApp"/>
-          </a> -->
-        </div>
-      </header>
+      <!-- Sosmed Icons -->
+      <div class="sosmed-icons hero-sosmed">
+        <a href="https://www.instagram.com/osissmkn1stabat_" target="_blank">
+          <img src="img/ig.svg" alt="Instagram" />
+        </a>
+        <a href="https://www.tiktok.com/@osissmkn1stabat" target="_blank">
+          <img src="img/tt.svg" alt="TikTok" />
+        </a>
+      </div>
+    </header>
 
-
-    <!-- Main content: 9 sections -->
+    <!-- Main content -->
     <main>
-      <!-- ulangi block ini untuk tiap bidang (1–9) -->
+      <!-- Section 1 -->
       <section class="section">
         <div class="milestone">1</div>
         <div class="text">
           <h2><span class="Inti">Bidang 1: Inti</span></h2>
-          <p><p>Bidang Inti bertugas menyusun dan menjalankan kebijakan OSIS, mengoordinasikan kepengurusan (ketua, sekretaris, bendahara), serta memantau dan mengevaluasi program kerja agar organisasi berjalan efektif dan akuntabel.</p>
+          <p class="desc">
+            Bidang Inti bertugas <span class="hl hl-inti">menyusun dan menjalankan kebijakan OSIS</span>, serta
+            <span class="hl hl-inti">mengoordinasikan kepengurusan</span> seperti
+            <span class="role ketua" title="Ketua OSIS">Ketua</span>,
+            <span class="role sekretaris" title="Sekretaris">Sekretaris</span>,
+            <span class="role bendahara" title="Bendahara">Bendahara</span>; selain itu juga
+            <span class="hl hl-inti">memantau & mengevaluasi program kerja</span> agar organisasi berjalan efektif dan akuntabel.
+          </p>
         </div>
         <div class="image">
-          <img src="img/inti.png" alt="Bidang Kepemimpinan">
+          <img src="img/inti.png" alt="Bidang Inti" />
         </div>
       </section>
 
+      <!-- Section 2 -->
       <section class="section">
         <div class="milestone">2</div>
         <div class="text">
           <h2><span class="Hubungan-Masyarakat">Bidang 2: Hubungan Masyarakat</span></h2>
-          <p><p>Bidang Humas mengurus dokumentasi kegiatan, pembuatan poster/video, pengelolaan media sosial OSIS, dan komunikasi eksternal untuk memperkuat informasi dan citra kegiatan sekolah.</p>
+          <p class="desc">
+            Bidang Humas fokus pada <span class="hl hl-humas">dokumentasi kegiatan</span>, pembuatan materi kreatif (poster/video),
+            dan <span class="hl hl-humas">pengelolaan media sosial OSIS</span> untuk memperkuat komunikasi dan citra kegiatan sekolah.
+          </p>
         </div>
         <div class="image">
-          <img src="img/humas.png" alt="Bidang Kreativitas & Seni">
+          <img src="img/humas.png" alt="Bidang Humas" />
         </div>
       </section>
 
+      <!-- Section 3 -->
       <section class="section">
         <div class="milestone">3</div>
         <div class="text">
           <h2><span class="Budi-Pekerti-Luhur">Bidang 3: Budi Pekerti Luhur</span></h2>
-          <p><p>Bidang Budi Pekerti Luhur (Buhur) membina karakter dan etika siswa melalui program kedisiplinan, tata tertib, dan kegiatan pengembangan diri serta mengatur sosialisasi aturan sekolah.</p>
+          <p class="desc">
+            Bidang Buhur membina karakter siswa melalui <span class="hl hl-buhur">program kedisiplinan</span>, tata tertib,
+            dan kegiatan pengembangan diri agar tercipta suasana sekolah yang tertib dan beretika.
+          </p>
         </div>
         <div class="image">
-          <img src="img/buhur.png" alt="Bidang Olahraga & Kesehatan">
+          <img src="img/buhur.png" alt="Bidang Buhur" />
         </div>
       </section>
 
+      <!-- Section 4 -->
       <section class="section">
         <div class="milestone">4</div>
         <div class="text">
           <h2><span class="Sosial-Politik">Bidang 4: Sosial Politik</span></h2>
-          <p><p>Bidang Sosial Politik menyelenggarakan kegiatan sosial dan penggalangan dana, serta mendampingi program advokasi siswa sebagai wadah partisipasi sosial dan kepedulian kepada masyarakat. Btw yang bikin web bidang ini &#128514</p>
+          <p class="desc">
+            Bidang Sospol menyelenggarakan <span class="hl hl-sospol">kegiatan sosial & penggalangan dana</span>, serta
+            <span class="hl hl-sospol">program advokasi siswa</span> sebagai wadah partisipasi dan kepedulian terhadap masyarakat. Sekaligus yang ngebuat web ini btw &#128511;
+          </p>
         </div>
         <div class="image">
-          <img src="img/sospol.png" alt="Bidang Olahraga & Kesehatan">
+          <img src="img/sospol.png" alt="Bidang Sosial Politik" />
         </div>
       </section>
 
+      <!-- Section 5 -->
       <section class="section">
         <div class="milestone">5</div>
         <div class="text">
-          <h2><span class="Prestasi-Akademik">Bidang 5: Prestasi Akademik</h2>
-          <p><p>Bidang Prestasi Akademik menyelenggarakan bimbingan, pelatihan, dan pendampingan lomba akademik untuk meningkatkan kemampuan dan prestasi siswa dalam bidang ilmu pengetahuan dan kompetisi.</p>
+          <h2><span class="Prestasi-Akademik">Bidang 5: Prestasi Akademik</span></h2>
+          <p class="desc">
+            Bidang Presmik menyelenggarakan <span class="hl hl-presmik">bimbingan dan pelatihan akademik</span>, serta
+            <span class="hl hl-presmik">pendampingan lomba</span> untuk meningkatkan prestasi siswa di berbagai kompetisi.
+          </p>
         </div>
         <div class="image">
-          <img src="img/presmik.png" alt="Bidang Olahraga & Kesehatan">
+          <img src="img/presmik.png" alt="Bidang Prestasi Akademik" />
         </div>
       </section>
 
+      <!-- Section 6 -->
       <section class="section">
         <div class="milestone">6</div>
         <div class="text">
-          <h2><span class="Non-Prestasi-Akademik">Bidang 6: Non-Prestasi Akademik</h2>
-          <p><p>Bidang Non-Prestasi Akademik mengorganisir lomba dan kegiatan non-akademik seperti seni dan olahraga, serta memberikan informasi dan dukungan untuk partisipasi siswa di berbagai event.</p>
+          <h2><span class="Non-Prestasi-Akademik">Bidang 6: Non-Prestasi Akademik</span></h2>
+          <p class="desc">
+            Bidang Non-Presmik mengorganisir <span class="hl hl-nonpres">lomba non-akademik (seni & olahraga)</span> dan
+            menyebarkan informasi penting tentang event non-akademik untuk meningkatkan partisipasi siswa.
+          </p>
         </div>
         <div class="image">
-          <img src="img/non presmik.png" alt="Bidang Olahraga & Kesehatan">
+          <img src="img/non presmik.png" alt="Bidang Non Prestasi" />
         </div>
       </section>
 
+      <!-- Section 7 -->
       <section class="section">
         <div class="milestone">7</div>
         <div class="text">
-          <h2><span class="Yang-Maha-Esa">Bidang 7: Yang Maha Esa</h2>
-          <p><p>Bidang Yang Maha Esa menyelenggarakan kegiatan keagamaan, pengajian, dan program spiritual yang memperkuat nilai moral, toleransi, dan pembentukan karakter siswa.</p>
+          <h2><span class="Yang-Maha-Esa">Bidang 7: Yang Maha Esa</span></h2>
+          <p class="desc">
+            Bidang YME menyelenggarakan <span class="hl hl-yme">kegiatan keagamaan</span>, pengajian, serta program spiritual yang memperkuat toleransi dan karakter siswa.
+          </p>
         </div>
         <div class="image">
-          <img src="img/yme.png" alt="Bidang Olahraga & Kesehatan">
+          <img src="img/yme.png" alt="Bidang Keagamaan" />
         </div>
       </section>
 
+      <!-- Section 8 -->
       <section class="section">
         <div class="milestone">8</div>
         <div class="text">
-          <h2><span class="Kewirausahaan">Bidang 8: Kewirausahaan</h2>
-          <p><p>Bidang Kewirausahaan mengembangkan kemampuan bisnis siswa melalui pelatihan, pengelolaan unit usaha sekolah, dan penggalangan dana yang mendukung kegiatan OSIS.</p>
+          <h2><span class="Kewirausahaan">Bidang 8: Kewirausahaan</span></h2>
+          <p class="desc">
+            Bidang Kewirausahaan berfokus pada <span class="hl hl-kkw">pelatihan bisnis</span>, pengelolaan unit usaha sekolah, dan
+            <span class="hl hl-kkw">penggalangan dana</span> untuk mendukung kegiatan OSIS.
+          </p>
         </div>
         <div class="image">
-          <img src="img/kkw.png" alt="Bidang Olahraga & Kesehatan">
+          <img src="img/kkw.png" alt="Bidang Kewirausahaan" />
         </div>
       </section>
 
+      <!-- Section 9 -->
       <section class="section">
         <div class="milestone">9</div>
         <div class="text">
-          <h2><span class="Bela-Negara">Bidang 9: Bela Negara</h2>
-          <p><p>Bidang Kewirausahaan mengembangkan kemampuan bisnis siswa melalui pelatihan, pengelolaan unit usaha sekolah, dan penggalangan dana yang mendukung kegiatan OSIS.</p>
+          <h2><span class="Bela-Negara">Bidang 9: Bela Negara</span></h2>
+          <p class="desc">
+            Bidang Bela Negara bertanggung jawab atas <span class="hl hl-bela">keamanan & ketertiban</span> di lingkungan sekolah, serta pelatihan ketahanan dan disiplin siswa.
+          </p>
         </div>
         <div class="image">
-          <img src="img/belgra.png" alt="Bidang Olahraga & Kesehatan">
+          <img src="img/belgra.png" alt="Bidang Bela Negara" />
         </div>
       </section>
     </main>
