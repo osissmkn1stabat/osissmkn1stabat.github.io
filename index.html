@@ -22,9 +22,37 @@
         observer.observe(el);
       });
     });
+    
+  // nav toggle (untuk mobile)
+  const btn = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (btn && links) {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      links.classList.toggle('show');
+    });
+  }
   </script>
 </head>
 <body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="">OSIS SMKN-1 Stabat</a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="hamb"></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="EKSKUL/index.html">Daftar Ekskul</a></li>
+      <li><a href="/#contact">Kontak</a></li>
+    </ul>
+  </div>
+</nav>
+
   <div class="container">
     <!-- Hero -->
     <header class="hero">
@@ -190,6 +218,7 @@
     <footer class="site-footer">
       <div class="footer-content">
         <p>&copy; 2025 OSIS SMKN-1 Stabat. All Rights Reserved.</p>
+        <p>Made with by Knindo | <a href="https://www.instagram.com/knindo_official/" target="_blank">Contact Me</a></p>
       </div>
     </footer>
   </div>
