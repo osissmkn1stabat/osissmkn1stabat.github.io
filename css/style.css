@@ -67,6 +67,20 @@ img { max-width:100%; display:block; border-radius:8px; }
   .nav-links.show { display:flex; }
 }
 
+.site-nav {
+  position: sticky; /* atau fixed */
+  top: 0;
+  z-index: 9999;    /* pastikan lebih tinggi dari elemen lain */
+  background: rgba(10,10,15,0.9);
+}
+
+/* juga pastikan tombol sendiri di depan */
+.nav-toggle {
+  position: relative;
+  z-index: 10000;
+  cursor: pointer;
+}
+
 
 /* ========== Container ========== */
 .container {
